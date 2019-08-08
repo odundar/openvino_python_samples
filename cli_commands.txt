@@ -1,0 +1,39 @@
+CPU:
+
+python3 object_detection_multi_platform.py --framework openvino --device CPU --mconfig /home/intel/openvino_models/ir/mobilenet-ssd/FP32/mobilenet-ssd.xml --mweight /home/intel/openvino_models/ir/mobilenet-ssd/FP32/mobilenet-ssd.bin --mlabels models/caffe_ssd_labels.txt -i offline --source /home/intel/Videos/traffic__winter_pk__pk_ave.MTS --model_image_height 224 --model_image_width 224 --confidence 0.60 --async True --number_of_async_requests 10 --pc True
+
+GPU:
+
+python3 object_detection_multi_platform.py --framework openvino --device GPU --mconfig /home/intel/openvino_models/ir/mobilenet-ssd/FP32/mobilenet-ssd.xml --mweight /home/intel/openvino_models/ir/mobilenet-ssd/FP32/mobilenet-ssd.bin --mlabels models/caffe_ssd_labels.txt -i offline --source /home/intel/Videos/traffic__winter_pk__pk_ave.MTS --model_image_height 224 --model_image_width 224 --confidence 0.60 --async True --number_of_async_requests 10 --pc True
+
+python3 object_detection_multi_platform.py --framework openvino --device GPU --mconfig /home/intel/openvino_models/ir/mobilenet-ssd/FP16/mobilenet-ssd.xml --mweight /home/intel/openvino_models/ir/mobilenet-ssd/FP16/mobilenet-ssd.bin --mlabels models/caffe_ssd_labels.txt -i offline --source /home/intel/Videos/traffic__winter_pk__pk_ave.MTS --model_image_height 224 --model_image_width 224 --confidence 0.60 --async True --number_of_async_requests 10 --pc True
+
+MYRIAD:
+
+python3 object_detection_multi_platform.py --framework openvino --device MYRIAD --mconfig /home/intel/openvino_models/ir/mobilenet-ssd/FP16/mobilenet-ssd.xml --mweight /home/intel/openvino_models/ir/mobilenet-ssd/FP16/mobilenet-ssd.bin --mlabels models/caffe_ssd_labels.txt -i offline --source /home/intel/Videos/traffic__winter_pk__pk_ave.MTS --model_image_height 224 --model_image_width 224 --confidence 0.60 --async True --number_of_async_requests 10 --pc True
+
+OpenCV:
+
+python3 object_detection_multi_platform.py --framework caffe --device CPU --backend OPENCV_DNN --mconfig /home/intel/openvino_models/FP32/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --mweight /home/intel/openvino_models/FP32/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --mlabels models/caffe_ssd_labels.txt -i offline --source /home/intel/Videos/traffic__winter_pk__pk_ave.MTS --model_image_height 224 --model_image_width 224 --confidence 0.60
+
+python3 object_detection_multi_platform.py --framework caffe --device CPU --backend OPENCV_DNN --mconfig /home/intel/openvino_models/FP32/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --mweight /home/intel/openvino_models/FP32/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --mlabels models/caffe_ssd_labels.txt -i offline --source /home/intel/Videos/traffic__winter_pk__pk_ave.MTS --model_image_height 224 --model_image_width 224 --confidence 0.60
+
+python3 object_detection_multi_platform.py --framework caffe --device OPENCL --backend OPENCV_DNN --mconfig /home/intel/openvino_models/FP32/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.prototxt --mweight /home/intel/openvino_models/FP32/object_detection/common/mobilenet-ssd/caffe/mobilenet-ssd.caffemodel --mlabels models/caffe_ssd_labels.txt -i offline --source /home/intel/Videos/traffic__winter_pk__pk_ave.MTS --model_image_height 224 --model_image_width 224 --confidence 0.60
+
+
+Extra Demos
+
+Interactive Face Demo
+
+./interactive_face_detection_demo -i "cam" -m /opt/intel/computer_vision_sdk/deployment_tools/intel_models/face-detection-adas-0001/FP16/face-detection-adas-0001.xml -m_ag /opt/intel/computer_vision_sdk/deployment_tools/intel_models/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.xml -m_em /opt/intel/computer_vision_sdk/deployment_tools/intel_models/emotions-recognition-retail-0003/FP16/emotions-recognition-retail-0003.xml -m_lm /opt/intel/computer_vision_sdk/deployment_tools/intel_models/facial-landmarks-35-adas-0001/FP16/facial-landmarks-35-adas-0001.xml -d GPU -d_ag CPU -d_em GPU -d_lm GPU -l lib/libcpu_extension.so
+
+WINDOWS:
+
+python.exe object_detection_multi_platform.py --framework openvino --device MYRIAD --mconfig C:\Users\odundar\Documents\Intel\OpenVINO\openvino_models/ir/mobilenet-ssd/FP16\mobilenet-ssd.xml --mweight C:\Users\odundar\Documents\Intel\OpenVINO\openvino_models/ir/mobilenet-ssd/FP16\mobilenet-ssd.bin --mlabels labels -i live --source 0 --model_image_height 224 --model_image_width 224 --confidence 0.60 --async True --number_of_async_requests 10 --pc False --openvino_cpulib_path C:\Users\odundar\Documents\Intel\OpenVINO\inference_engine_samples_2017\intel64\Release\cpu_extension.dll --openvino_libpath C:\Intel\computer_vision_sdk\deployment_tools\inference_engine\bin\intel64\Release
+
+python.exe object_detection_multi_platform.py --framework openvino --device MYRIAD --mconfig C:\Users\odundar\Documents\Intel\OpenVINO\openvino_models/ir/mobilenet-ssd/FP16\mobilenet-ssd.xml --mweight C:\Users\odundar\Documents\Intel\OpenVINO\openvino_models/ir/mobilenet-ssd/FP16\mobilenet-ssd.bin --mlabels labels -i live --source 0 --model_image_height 224 --model_image_width 224 --confidence 0.60 --async True --number_of_async_requests 10 --pc False --openvino_cpulib_path C:\Users\odundar\Documents\Intel\OpenVINO\inference_engine_samples_2017\intel64\Release\cpu_extension.dll --openvino_libpath C:\Intel\computer_vision_sdk\deployment_tools\inference_engine\bin\intel64\Release
+
+
+YOLOv3:
+
+python3 object_detection_multi_platform.py --framework openvino --device CPU --mconfig ~/smart-video-workshop/object-detection/tensorflow-yolo-v3/FP32/frozen_darknet_yolov3_model.xml --mweight ~/smart-video-workshop/object-detection/tensorflow-yolo-v3/FP32/frozen_darknet_yolov3_model.bin --mlabels ~/smart-video-workshop/object-detection/tensorflow-yolo-v3/coco.names -i offline --source /home/intel/Workshop2/videos/cars_1900.mp4 --model_image_height 224 --model_image_width 224 --confidence 0.60 --iou_threshold 0.4 --yolomodel True
