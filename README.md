@@ -6,7 +6,7 @@ This repo contains couple python sample applications to teach about Intel(R) Dis
 
 `openvino_basic_object_detection.py`  
 
-This application intends to showcase how a model is being used with OpenVINO(TM) Toolkit. 
+This applications intends to showcase how a model is being used with OpenVINO(TM) Toolkit. 
 
 Aim is to show initial use case of Inference Engine API and Async Mode.
 
@@ -209,4 +209,4 @@ optional arguments:
 
 ## Object Detection Multi Framework Sample
 
-This sample application will be used to compare inference between multiple frameworks; opencv, openvino, tensorflow, mxnet, pytorch
+This sample application will be used to compare inference between multiple frameworks; opencv, openvino 
